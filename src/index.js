@@ -2,9 +2,9 @@ require("dotenv").config();
 const debug = require("debug")("know:");
 const chalk = require("chalk");
 const connectDataBase = require("./db");
-const setUpServer = require("./server/server");
+const setUpServer = require("./server");
 
-const port = process.env.SERVER_PORT || 6969;
+const port = process.env.SERVER_PORT || 4000;
 const dbCredentials = process.env.MONGO_CREDENTIALS;
 
 (async () => {
