@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const chalk = require("chalk");
 const { notFoundError, superError } = require("./middleware/errors");
+const knowRouter = require("./Routers/know");
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use((req, res, next) => {
   debug(chalk.blueBright("A new request have arrived"));
   next();
 });
+
+app.use("/know", knowRouter);
 
 app.use(notFoundError);
 app.use(superError);
